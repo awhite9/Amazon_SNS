@@ -14,19 +14,20 @@ public class SMSAmazon
     public static void main(String[] args) {
         AmazonSNSClient snsClient = new AmazonSNSClient();
         String message = "Are you on your way?";
-        String phoneNumber = "+15017225";
+        String phoneNumber = "+15013439513";
         Map<String, MessageAttributeValue> smsAttributes =
                 new HashMap<String, MessageAttributeValue>();
         smsAttributes.put("AWS.SNS.SMS.SenderID", new MessageAttributeValue()
                 .withStringValue("mySenderID") //The sender ID shown on the device.
                 .withDataType("String"));
         smsAttributes.put("AWS.SNS.SMS.MaxPrice", new MessageAttributeValue()
-                .withStringValue("0.50") //Sets the max price to 0.50 USD.
+                .withStringValue("10.00") //Sets the max price to 0.50 USD.
                 .withDataType("Number"));
         smsAttributes.put("AWS.SNS.SMS.SMSType", new MessageAttributeValue()
-                .withStringValue("Promotional") //Sets the type to promotional.
+                .withStringValue("Transactional") //Sets the type to promotional.
                 .withDataType("String"));
         sendSMSMessage(snsClient, message, phoneNumber, smsAttributes);
+        System.out.println("message sent");
     }
 
     public static void sendSMSMessage(AmazonSNSClient snsClient, String message,

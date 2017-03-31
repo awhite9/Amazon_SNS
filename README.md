@@ -1,3 +1,3 @@
-# Play Java Product with JPA
+# Play JAVA Project using Amazon AWS
 
-This project demonstrate how to create a simple CRUD application with Play, using JPA.
+This project uses Amazon web service to send both emails and SMS messages.
